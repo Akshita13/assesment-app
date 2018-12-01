@@ -1,0 +1,29 @@
+<table border="2px">
+<thead>
+  <th *ngFor="let head of header">
+    {{head}}
+  </th>
+</thead>
+
+<!-- {{student | json}} -->
+<tbody>
+  <tr *ngFor="let data of student">
+    <td *ngFor="let tab of table">
+    {{data[tab]}}
+  </td>
+  </tr>
+</tbody>
+    
+    
+   
+  
+    <!-- <td>
+      <button (click)="getStudent(student.id)">edit</button>
+    </td>
+    <td>
+      <button (click)="deleteStudent(student.id)">delete</button>
+    </td> -->
+  
+  </table>
+
+

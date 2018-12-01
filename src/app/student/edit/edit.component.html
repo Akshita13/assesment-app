@@ -1,0 +1,43 @@
+<form [formGroup]="studentForm" (ngSubmit)="updateStudent()">
+
+  <label>name:</label>
+  <input type="text" formControlName="name">
+  <div *ngIf="name.invalid && (name.touched || name.dirty)">
+    <div *ngIf="name.errors.required">
+        name cannot be empty!!
+    </div>
+  </div>
+  <br>
+
+  <label>roll number:</label>
+  <input type="text" formControlName="rollNum">
+  <div *ngIf="rollNum.invalid && (rollNum.touched || rollNum.dirty)">
+    <div *ngIf="rollNum.errors.required">
+        roll number cannot be empty!!
+    </div>
+  </div>
+  <br>
+
+  <label>address:</label>
+  <input type="text" formControlName="address">
+  <div *ngIf="address.invalid && (address.touched || address.dirty)">
+    <div *ngIf="address.errors.required">
+      address cannot be empty!!
+    </div>
+  </div>
+  <br>
+
+  <label>phone number:</label>
+  <input type="text" formControlName="phoneNum">
+  <div *ngIf="phoneNum.invalid && (phoneNum.touched || phoneNum.dirty)">
+    <div *ngIf="phoneNum.errors.required">
+      phone number cannot be empty!!
+    </div>
+    <div *ngIf="phoneNum.errors.maxlength">
+      phone number must be 10 digit!!
+    </div>
+  </div>
+  <br>
+
+<button type="submit">submit</button>
+</form>

@@ -1,0 +1,30 @@
+<!-- 
+<table border="2px">
+    <tr><th>id</th>
+    <th>name</th>
+    <th>roll number</th>
+    <th>address</th>
+    <th>phone number</th>
+
+   
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.rollNum}}</td>
+      <td>{{student.address}}</td>
+      <td>{{student.phoneNum}}</td>
+      
+     
+    
+      <td>
+        <button (click)="getStudent(student.id)">edit</button>
+      </td>
+      <td>
+        <button (click)="deleteStudent(student.id)">delete</button>
+      </td>
+    </tr>
+    </table> -->
+ 
+
+<app-table [header]="headers" [data]="students"></app-table>
