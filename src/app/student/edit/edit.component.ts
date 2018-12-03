@@ -1,8 +1,13 @@
+/**
+ * @ author akshita kapadia
+ * this file contains methods to edit and update 
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { StudentService } from '../student.service';
 import { Router, ActivatedRoute } from '@angular/router';
+//------------------------------------------------------//
 import { Students } from '../students.model';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-edit',
@@ -10,7 +15,16 @@ import { Students } from '../students.model';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+   /**
+   * @property studentForm is to add the student data to form
+   */
   studentForm:FormGroup;
+   /**
+   * 
+   * @param studentService to inject studentservice
+   * @param fb to take formbuilder which is class to from directives
+   * @param router to navigate
+   */
   constructor(private studentService:StudentService,
     private fb:FormBuilder,
     private router:Router,
@@ -26,6 +40,12 @@ export class EditComponent implements OnInit {
     this.studentService.getStudent(id).subscribe(
       (student)=>{this.loadData(student)})
   }
+
+  
+/**
+ * to take the form controls from html
+ * and apply validations
+ */
   public loadForm():void{
     this.studentForm=this.fb.group(
       {
@@ -38,7 +58,10 @@ export class EditComponent implements OnInit {
       }
     )
   }
-
+/**
+ * 
+ * to patch the values in form controls
+ */
   public loadData(student:Students):void{
     this.studentForm.patchValue(
       {
@@ -53,7 +76,11 @@ export class EditComponent implements OnInit {
         
   }
 
-
+/**
+ * after patching values and edit values,
+ * to update values this method applies
+ * and navigate to view
+ */
 
   public updateStudent():void{
     this.studentService.updateStudent(this.studentForm.value).subscribe(
@@ -61,6 +88,10 @@ export class EditComponent implements OnInit {
       )
      
   }
+   /**
+   * these methods use to get the controls from html and apply validations
+   */
+
 
   public get name():AbstractControl
   {

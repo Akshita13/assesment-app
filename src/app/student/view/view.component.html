@@ -27,4 +27,4 @@
     </table> -->
  
 
-<app-table [header]="headers" [data]="students"></app-table>
+<akshita-list [header]="headers" [studentList]="students" (deleteClicked)="onDelete($event)" (editClicked)="onEdit($event)"></akshita-list>

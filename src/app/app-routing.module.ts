@@ -1,3 +1,7 @@
+/**
+ * @author akshita kapadia
+ * lazy loading routing module apply for module
+ */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
